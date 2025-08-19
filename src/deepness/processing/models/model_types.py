@@ -15,6 +15,7 @@ from deepness.processing.map_processor.map_processor_superresolution import MapP
 from deepness.processing.models.detector import Detector
 from deepness.processing.models.recognition import Recognition
 from deepness.processing.models.regressor import Regressor
+from deepness.processing.models.dual import DualModel
 from deepness.processing.models.segmentor import Segmentor
 from deepness.processing.models.superresolution import Superresolution
 
@@ -39,7 +40,7 @@ class ModelDefinition:
         return [
             cls(
                 model_type=ModelType.SEGMENTATION,
-                model_class=Segmentor,
+                model_class=DualModel,
                 parameters_class=SegmentationParameters,
                 map_processor_class=MapProcessorSegmentation,
             ),
